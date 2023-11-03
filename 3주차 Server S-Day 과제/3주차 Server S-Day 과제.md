@@ -30,10 +30,6 @@
 
 - 참고 : https://devmango.tistory.com/97
 
-아직 해결하지 못했습니다. 시험이 어제 끝나서 늦게 시작했습니다. 자정이 넘더라도 마저 수정하겠습니다. 죄송합니다..ㅠㅠㅠ
-
-
-
 
 ---
 SampleController.java 소스 코드 :
@@ -74,6 +70,9 @@ SampleController.java 소스 코드 :
     }
 ```
 
+<img width="1384" alt="스크린샷 2023-11-04 오전 12 13 34" src="https://github.com/GDSC-Ewha-5th/GDSC-Server-5th/assets/78548833/7f5297bd-88b2-48e6-ad62-58bfd13296b9">
+
+인텔리제이에서 실행도 잘 되고 index.html파일도 넣었고 폴더 위치도 확인 했지만 이유를 모르겠습니다. 한 번 봐주실 수 있을까요? 파일 첨부하겠습니다..!
 
 
 
