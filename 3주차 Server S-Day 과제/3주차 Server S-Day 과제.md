@@ -31,6 +31,41 @@
 - 참고 : https://devmango.tistory.com/97
 
 
+- 해결 과정 :난관4 & 난관5
+
+  
+### 난관 4 : 분명 환경변수 설정을 다 해줬었는데 $java --version 을 해보니 jdk 21버전으로 뜬다.
+- 해결:  jdk 21 버전을 삭제해줬다!
+-  삭제하지 않고 default jdk를 17로 바꿀 수는 없을까 해서 vim ~/.zshrc으로 zshrc 한 번 건드렸다가 터미널이 고장나길래 취소!
+
+<img width="267" alt="스크린샷 2023-11-07 오후 2 34 55" src="https://github.com/GDSC-Ewha-5th/GDSC-Server-5th/assets/78548833/67193252-10c5-432f-8bb6-03341118f354">
+
+```
+$ sudo rm -rf temurin-21.jdk
+```
+
+-참고 : https://ifuwanna.tistory.com/247
+
+
+
+### 난관 5 : 갑자기 application이 안돌아간다! 8080포트가 이미 사용 중..
+<img width="950" alt="스크린샷 2023-11-07 오후 2 36 10" src="https://github.com/GDSC-Ewha-5th/GDSC-Server-5th/assets/78548833/d48b3ebf-fdef-4181-b772-13bc494de8d3">
+
+오케이 해결해주마
+
+<img width="365" alt="스크린샷 2023-11-07 오후 2 41 51" src="https://github.com/GDSC-Ewha-5th/GDSC-Server-5th/assets/78548833/008f452b-6e20-4c14-a801-223195ab64d7">
+
+- 8080포트를 죽여준다~ 해결!
+
+
+<img width="611" alt="스크린샷 2023-11-07 오후 2 42 37" src="https://github.com/GDSC-Ewha-5th/GDSC-Server-5th/assets/78548833/c4440123-f27b-4eb4-8b44-b0e93f73da95">
+
+
+드디어 되는구나~~ʕ”̮ॽु⋆⁺₊⋆ ♡̷̷̷ 
+
+
+
+
 ---
 SampleController.java 소스 코드 :
 
@@ -71,8 +106,6 @@ SampleController.java 소스 코드 :
 ```
 
 <img width="1384" alt="스크린샷 2023-11-04 오전 12 13 34" src="https://github.com/GDSC-Ewha-5th/GDSC-Server-5th/assets/78548833/7f5297bd-88b2-48e6-ad62-58bfd13296b9">
-
-인텔리제이에서 실행도 잘 되고 index.html파일도 넣었고 폴더 위치도 확인 했지만 이유를 모르겠습니다. 한 번 봐주실 수 있을까요? 파일 첨부하겠습니다..!
 
 
 
