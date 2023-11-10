@@ -1,4 +1,4 @@
-## 과정1 : 프로젝트를 생성하고 build.gradle을 실행
+## 과정1 : 프로젝트를 생성하고 build.gradle을 실행 
 - 그러나 실습을 따라가던 도중 yml 파일이 보이지 않았습니다.
 <img width="327" alt="스크린샷 2023-11-10 오후 10 10 24" src="https://github.com/GDSC-Ewha-5th/GDSC-Server-5th/assets/78548833/95a8581b-88aa-4b1e-b76f-3902e4374e78">
 
