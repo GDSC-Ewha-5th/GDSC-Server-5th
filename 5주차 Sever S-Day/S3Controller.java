@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//영상 링크 : https://drive.google.com/file/d/17tmgRlWb4g0ZRuUKt6pvBlmmw-NqpDHR/view?usp=sharing
 @Controller
 @RequiredArgsConstructor
 public class S3Controller {
