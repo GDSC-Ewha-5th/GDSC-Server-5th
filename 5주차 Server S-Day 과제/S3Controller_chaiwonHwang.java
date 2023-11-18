@@ -1,10 +1,7 @@
 package ServerStudy5Cloud.ServerStudy5Cloud.Controller;
 
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
-import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.S3ObjectSummary;
+import com.amazonaws.services.s3.model.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -16,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -46,21 +44,14 @@ public class S3Controller {
     }
 
     @PostMapping("/upload")
-    public String uploadFile(@RequestParam("file") MultipartFile file) {
+    public String uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
         //putObject와 setObjectAcl로 이미지 업로드하고 ACL 퍼블릭으로 만들기
-        if (file.isEmpty()) {
-            // 파일이 비어있는 경우 처리
-            return "redirect:/";
-        }
-
         String fileName = file.getOriginalFilename();
         ObjectMetadata metadata = new ObjectMetadata();
         metadata.setContentLength(file.getSize());
         metadata.setContentType(file.getContentType());
 
-        // 파일의 InputStream을 얻어 S3에 업로드
-        InputStream inputStream = file.getInputStream();
-        amazonS3.putObject(new PutObjectRequest(bucketName, fileName, file.getInputStream(), metadata));
+        amazonS3.putObject(bucketName, fileName, file.getInputStream(), metadata);
         amazonS3.setObjectAcl(bucketName, fileName, CannedAccessControlList.PublicRead);
         return "redirect:/";
     }
