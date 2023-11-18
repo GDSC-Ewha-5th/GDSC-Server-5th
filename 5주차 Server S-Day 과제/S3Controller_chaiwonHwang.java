@@ -44,15 +44,21 @@ public class S3Controller {
     }
 
     @PostMapping("/upload")
-    public String uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
+    public String uploadFile(@RequestParam("file") MultipartFile file) {
         //putObject와 setObjectAcl로 이미지 업로드하고 ACL 퍼블릭으로 만들기
+        // 파일 업로드 로직
         String fileName = file.getOriginalFilename();
         ObjectMetadata metadata = new ObjectMetadata();
         metadata.setContentLength(file.getSize());
         metadata.setContentType(file.getContentType());
 
-        amazonS3.putObject(bucketName, fileName, file.getInputStream(), metadata);
+        try {
+            amazonS3.putObject(bucketName, fileName, file.getInputStream(), metadata);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         amazonS3.setObjectAcl(bucketName, fileName, CannedAccessControlList.PublicRead);
         return "redirect:/";
+
     }
 }
