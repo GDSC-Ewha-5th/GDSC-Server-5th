@@ -1,4 +1,4 @@
-package ServerStudy5Cloud.ServerStudy5Cloud.Controller;
+/*package ServerStudy5Cloud.ServerStudy5Cloud.Controller;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
