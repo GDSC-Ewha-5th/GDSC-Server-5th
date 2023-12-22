@@ -1,4 +1,5 @@
-/*package ServerStudy5Cloud.ServerStudy5Cloud.Controller;
+
+package ServerStudy5Cloud.ServerStudy5Cloud.Controller;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
@@ -6,6 +7,7 @@ import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +36,7 @@ public class S3Controller {
     @GetMapping("/")
     public String listFiles(Model model) {
         //getUrl로 객체 URL 가져온 후, List<String>에 넣어 index.html에 반환하기
+
         //업로드할 URL 파일 목록을 저장할 리스트 생성
         List<String> fileUrls = new ArrayList<>();
 
@@ -77,3 +83,4 @@ public class S3Controller {
 }
 
 //https://drive.google.com/file/d/1o9uRjxExZHYJOCKX6aTS8y8KKc-vic0d/view?usp=sharing
+
