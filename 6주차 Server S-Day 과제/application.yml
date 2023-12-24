@@ -1,0 +1,13 @@
+# RDS
+spring:
+  datasource:
+    url: jdbc:mysql://gdsc-rds.cn2mak2qq5zj.us-east-1.rds.amazonaws.com:3306/study6
+    username: admin
+    password: gdsccloud
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # hibernate
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update #rds에 없는 부분은 업데이트 되고, 아닌 부분은 그냥 남게 된다.
+      dialect: org.hibernate.dialect.MySQL8Dialect
