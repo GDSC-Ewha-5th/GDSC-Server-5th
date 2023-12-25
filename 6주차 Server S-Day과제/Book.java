@@ -1,0 +1,21 @@
+package ServerStudy6Cloud.ServerStudy6Cloud.Domain;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Setter @Getter
+@Table( name = "book_info")
+public class Book {
+    //책 이름
+    //해당 책을 좋아하는 이유
+    @Id
+    @GeneratedValue
+    @Column(name = "book_id")
+    private Long id;
+
+    private String name;
+    private String reason;
+
+}
