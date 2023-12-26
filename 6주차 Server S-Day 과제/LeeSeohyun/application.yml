@@ -1,0 +1,13 @@
+# RDS
+spring:
+  datasource:
+    url: jdbc:mysql://gdsc-rds2.cf0i42aimwar.ap-northeast-2.rds.amazonaws.com:3306/study_6
+    username: admin
+    password: [password]
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # hibernate
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
