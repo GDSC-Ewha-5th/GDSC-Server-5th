@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>GDSC Server</title>
+</head>
+<body>
+
+<h2>AWS S3에 파일을 업로드해봐요!</h2>
+
+<form method="post" action="/upload" enctype="multipart/form-data">
+    <input  class="btn-gradient blue mini" type="file" name="file" />
+    <button class="btn-gradient blue mini" type="submit">Upload</button>
+</form>
+
+<h2>AWS S3의 파일을 확인해봐요!</h2>
+
+<table>
+    <tr th:each="url : ${urls}">
+        <td>
+            <img th:src="${url}" style="max-height: 300px; overflow: hidden;">
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
